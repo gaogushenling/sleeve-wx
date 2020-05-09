@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-card": "lin-ui/card/index",
+    "l-price": "lin-ui/price/index"
+  }
+}

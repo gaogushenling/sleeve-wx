@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-button": "lin-ui/button/index",
+    "l-water-flow": "lin-ui/water-flow/index",
+    "l-demo": "../../components/l-demo/index"
+  }
+}
