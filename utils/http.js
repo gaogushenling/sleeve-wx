@@ -1,19 +1,17 @@
 import {config} from "../config/config";
+import {promisic} from "./util";
 
 class Http {
-  static request({url, data, method = 'GET', callback}) {
-    wx.request({
+  static async request({url, data, method = 'GET'}) {
+    const res = await promisic(wx.request)({
       url: `${config.apiBaseUrl}${url}`,
       data,
       method,
       header: {
         appkey: config.appKey
       },
-      success: (res) => callback(res.data),
-      fail(res) {
-        console.log('res', res)
-      }
-    })
+    });
+    return res.data;  // 小程序返回数据
   }
 }
 

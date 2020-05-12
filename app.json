@@ -1,9 +1,7 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/waterflow/index",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/waterflow/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +10,8 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "l-grid": "/miniprogram_npm/lin-ui/grid/lin"
+  }
 }
