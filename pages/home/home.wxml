@@ -1,5 +1,8 @@
 <view>
+    <!--主题图片-->
     <image class="top-theme" src="{{themeA.entrance_img}}"/>
+
+    <!--banner-->
     <swiper class="swiper" indicator-dots autoplay indicator-active-color="#157658" circular>
         <block wx:for="{{bannerB.items}}" wx:key="id">
             <swiper-item>
@@ -7,4 +10,7 @@
             </swiper-item>
         </block>
     </swiper>
+
+    <!--商品六宫格-->
+    <s-category-grid grid="{{grid}}"></s-category-grid>
 </view>
