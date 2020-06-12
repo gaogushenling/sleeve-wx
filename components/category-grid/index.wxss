@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
 }
 
 .l-inner-container {
@@ -27,6 +28,7 @@
 }
 
 .text {
-    font-size: 30rpx;
-    margin-top: 10rpx;
+    font-size: 24rpx;
+    margin-top: 6rpx;
+    color: #333;
 }

@@ -1,9 +1,9 @@
 import {Http} from "../utils/http";
 
 class Category {
-  static getCategoryGrid(){
+  static getHomeLocationC(){
     return Http.request({
-      url: '/category/grid/all'
+      url: 'category/grid/all'
     })
   }
 }

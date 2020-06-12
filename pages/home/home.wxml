@@ -13,4 +13,9 @@
 
     <!--商品六宫格-->
     <s-category-grid grid="{{grid}}"></s-category-grid>
+
+    <!--主页优惠券活动-->
+    <image class="activity" src="{{activityD.entrance_img}}"/>
+
+    <s-spu-scroll theme="{{themeE}}" spu-list="{{themeESpu}}" wx:if="{{themeE.online}}"></s-spu-scroll>
 </view>

@@ -1,6 +1,7 @@
 import {Theme} from "../../model/theme";
 import {Banner} from "../../model/banner";
 import {Category} from "../../model/category";
+import {Activity} from "../../model/activity";
 
 Page({
 
@@ -11,23 +12,42 @@ Page({
     themeA: null,
     bannerB: null,
     grid: [],
+    activityD: null,
+    themeE: null,
+    themeESpu: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  async onLoad () {
+  async onLoad() {
     this.initAllData()
   },
 
   async initAllData() {
-    const themeA = await Theme.getHomeLocationA();
+    // const themeA = await Theme.getHomeLocationA();
+    // 类的对象可以保存数据和状态
+    const theme = new Theme();
+    await theme.getThemes();
+    const themeA = await theme.getHomeLocationA();
+    const themeE = await theme.getHomeLocationE();
+    let themeESpu = [];
+    if(themeE.online){
+      const data = await Theme.getHomeLocationESpu();
+      if(data){
+        themeESpu = data.spu_list.slice(0, 8)
+      }
+    }
     const bannerB = await Banner.getHomeLocationB();
-    const grid = await Category.getCategoryGrid();
+    const grid = await Category.getHomeLocationC();
+    const activityD = await Activity.getLocationD();
     this.setData({
-      themeA: themeA[0],
+      themeA,
       bannerB,
-      grid
+      grid,
+      activityD,
+      themeE,
+      themeESpu
     })
   },
 
