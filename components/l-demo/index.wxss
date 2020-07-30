@@ -1,4 +1,4 @@
-/* components/l-demo.wxss */
+/* components/l-demo.common */
 .life-container {
   width: 350rpx !important;
   padding: 0 0 20rpx 0 !important;

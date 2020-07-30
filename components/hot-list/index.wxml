@@ -1,0 +1,12 @@
+<view class="container">
+    <image class="title-img" src="{{banner.img}}"/>
+    <view class="inner-container">
+        <view hover-class="rect-hover" hover-stay-time="300">
+            <image class="left-img" src="{{left.img}}"/>
+        </view>
+        <view class="right-container" hover-class="small-hover" hover-stay-time="{{300}}">
+            <image class="right-img" src="{{rightTop.img}}"/>
+            <image class="right-img" src="{{rightBottom.img}}"/>
+        </view>
+    </view>
+</view>

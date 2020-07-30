@@ -1,21 +1,41 @@
-<view>
-    <!--主题图片-->
-    <image class="top-theme" src="{{themeA.entrance_img}}"/>
+<l-loadmore show type="{{loadingType}}">
+    <view slot="content">
+        <!--主题图片-->
+        <image class="top-theme" src="{{themeA.entrance_img}}"/>
 
-    <!--banner-->
-    <swiper class="swiper" indicator-dots autoplay indicator-active-color="#157658" circular>
-        <block wx:for="{{bannerB.items}}" wx:key="id">
-            <swiper-item>
-                <image class="swiper" src="{{item.img}}"/>
-            </swiper-item>
-        </block>
-    </swiper>
+        <!--banner-->
+        <swiper class="swiper" indicator-dots autoplay indicator-active-color="#157658" circular>
+            <block wx:for="{{bannerB.items}}" wx:key="id">
+                <swiper-item>
+                    <image class="swiper" src="{{item.img}}"/>
+                </swiper-item>
+            </block>
+        </swiper>
 
-    <!--商品六宫格-->
-    <s-category-grid grid="{{grid}}"></s-category-grid>
+        <!--商品六宫格-->
+        <s-category-grid grid="{{grid}}"></s-category-grid>
 
-    <!--主页优惠券活动-->
-    <image class="activity" src="{{activityD.entrance_img}}"/>
+        <!--主页优惠券活动-->
+        <image class="activity" src="{{activityD.entrance_img}}"/>
 
-    <s-spu-scroll theme="{{themeE}}" spu-list="{{themeESpu}}" wx:if="{{themeE.online}}"></s-spu-scroll>
-</view>
+        <!--横向滚动信息-->
+        <s-spu-scroll l-class="spu-scroll" theme="{{themeE}}" spu-list="{{themeESpu}}"
+                      wx:if="{{themeE.online}}"></s-spu-scroll>
+
+        <!--主题-->
+        <image class="quality" src="{{themeF.entrance_img}}"/>
+
+        <!--主题-banner-->
+        <s-hot-list banner="{{bannerG}}"></s-hot-list>
+
+        <!--主题-->
+        <image class="fashion" src="{{themeH.entrance_img}}"/>
+
+        <!--底部瀑布流-->
+        <view class="spu-bottom">
+            <image class="title-spu-bottom" src="/imgs/home/title@interest.png"/>
+            <!--抽象组件-->
+            <l-water-flow generic:l-water-flow-item="s-spu-preview"></l-water-flow>
+        </view>
+    </view>
+</l-loadmore>
