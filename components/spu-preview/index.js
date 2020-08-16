@@ -24,6 +24,12 @@ Component({
         w: 340,
         h: height*340/width
       })
+    },
+    onItemTap: function(event){
+      const {pid} = event.currentTarget.dataset;
+      wx.navigateTo({
+        url: `/pages/detail/detail?pid=${pid}`
+      })
     }
   }
 });

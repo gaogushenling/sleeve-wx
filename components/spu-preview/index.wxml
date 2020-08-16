@@ -1,6 +1,6 @@
 <wxs src="../../wxs/price.wxs" module="p"></wxs>
 
-<view class="container">
+<view data-pid="{{data.id}}" bind:tap="onItemTap" class="container">
     <!-- 计算图片宽高：1.class="img" mode="widthFix"  2.绑定图片加载回调函数-->
     <image src="{{data.img}}" bind:load="onImgLoad" style="width: {{w}}rpx; height: {{h}}rpx"/>
     <view class="content-container">

@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "s-realm": "/components/realm/index"
   }
 }
