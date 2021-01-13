@@ -4,7 +4,8 @@ import {Fence} from "./fence";
 class FenceGroup {
   constructor(spu) {
     this.spu = spu;
-    this.spuList = spu.sku_list
+    this.spuList = spu.sku_list;
+    this.fences = [];
   }
 
   /**
@@ -17,16 +18,17 @@ class FenceGroup {
    */
 
   // 矩阵转置方式
-  initFences(){
+  initFences() {
     const matrix = this._createMatrix(this.spuList);
     const fences = [];
     const AT = matrix.transpose();
-    AT.forEach(specs=>{
+    AT.forEach(specs => {
       const fence = new Fence(specs);
       fence.init();
       fences.push(fence)
     });
-    console.log('fences', fences);
+    // console.log('fences', fences);
+    this.fences = fences;
   }
 
   initFences1() {
@@ -51,6 +53,15 @@ class FenceGroup {
   _createMatrix(skuList) {
     const m = skuList.map(sku => sku.specs);
     return new Matrix(m)
+  }
+
+  eachCell(cb) {
+    for (let i = 0; i < this.fences.length; i++) {
+      for (let j = 0; j < this.fences[i].cells.length; j++) {
+        const cell = this.fences[i].cells[j];
+        cb(cell, i, j);
+      }
+    }
   }
 }
 

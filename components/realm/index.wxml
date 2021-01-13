@@ -2,4 +2,8 @@
     <view>
         <image />
     </view>
+    <block wx:for="{{fences}}" wx:key="id">
+        <s-fence bind:celltap="onCellTap" fence="{{item}}" x="{{index}}"></s-fence>
+    </block>
+    <view class="counter-container"></view>
 </view>
